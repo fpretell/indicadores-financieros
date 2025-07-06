@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="IndicadoresApp">
+<head>
+  <meta charset="utf-8">
+  <title>Indicadores Financieros</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <div class="container" ng-view></div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.min.js"></script>
+
+  <!-- App Scripts -->
+  <script src="app/app.module.js"></script>
+  <script src="app/app.routes.js"></script>
+  <script src="app/config/config.js"></script>
+  <script src="app/shared/utils.js"></script>
+  <script src="app/services/indicadores.service.js"></script>
+  <script src="app/home/home.controller.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app/historial/historial.controller.js"></script>
+  <script src="app/detalle/detalle.controller.js"></script>
+
+</body>
+</html>

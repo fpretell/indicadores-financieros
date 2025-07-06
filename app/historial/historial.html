@@ -1,0 +1,41 @@
+<div class="container" style="padding-top: 10px;">
+
+  <!-- Header -->
+  <div class="row" style="border-bottom: 1px solid #ccc; margin-bottom: 15px;">
+    <div class="col-xs-2 text-left">
+      <a href="#!/" class="btn btn-link" style="padding-left: 0;">← Indicadores</a>
+    </div>
+    <div class="col-xs-8 text-center">
+      <h4 style="margin: 10px 0;">{{ indicadorNombre }}</h4>
+    </div>
+    <div class="col-xs-2"></div>
+  </div>
+
+  <!-- Loading -->
+  <div ng-if="loading" class="text-center">
+    <i class="glyphicon glyphicon-refresh glyphicon-spin"></i> Cargando...
+  </div>
+
+  <!-- Error -->
+  <div ng-if="error" class="alert alert-danger text-center">
+    Ocurrió un error al cargar los datos.
+  </div>
+
+  <!-- Lista con ícono info -->
+  <div class="list-group" ng-if="!loading && !error">
+    <a class="list-group-item"
+       style="padding: 12px 16px; border-bottom: 1px solid #eee; cursor: pointer;"
+       ng-repeat="dato in datos"
+       ng-click="verDetalle(indicadorId, dato)">
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="text-primary">{{ dato.fecha }}</div>
+          <div class="text-muted">$ {{ dato.valor }}</div>
+        </div>
+        <div class="col-xs-4 text-right" style="display: flex; align-items: center; justify-content: flex-end;">
+          <i class="glyphicon glyphicon-info-sign" style="color: #007aff; font-size: 18px;"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

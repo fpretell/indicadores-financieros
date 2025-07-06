@@ -1,0 +1,33 @@
+<div class="container" style="padding-top: 10px;">
+
+  <!-- Header -->
+  <div class="row" style="border-bottom: 1px solid #ccc; margin-bottom: 15px;">
+    <div class="col-xs-2 text-left">
+      <button class="btn btn-link" style="padding-left: 0;">
+        <i class="glyphicon glyphicon-menu-hamburger"></i>
+      </button>
+    </div>
+    <div class="col-xs-8 text-center">
+      <h4 style="margin: 10px 0;">Indicadores</h4>
+    </div>
+    <div class="col-xs-2"></div>
+  </div>
+
+  <!-- Lista de indicadores -->
+  <div class="list-group">
+    <a class="list-group-item"
+       ng-href="#!/historial/{{ indicador.id }}"
+       style="padding: 12px 16px; border-bottom: 1px solid #eee; cursor: pointer;"
+       ng-repeat="indicador in indicadores">
+      <div class="row">
+        <div class="col-xs-10">
+          <div style="font-weight: 500;">{{ indicador.label }}</div>
+          <div style="font-size: 13px; color: #007aff;">{{ indicador.unidad }}</div>
+        </div>
+        <div class="col-xs-2 text-right" style="display: flex; align-items: center; justify-content: flex-end;">
+          <i class="glyphicon glyphicon-info-sign" style="color: #007aff; font-size: 18px;"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="container" style="padding-top: 10px;">
+
+  <!-- Header -->
+  <div class="row" style="border-bottom: 1px solid #ccc; margin-bottom: 20px; padding-bottom: 10px;">
+    <div class="col-xs-2 text-left">
+      <a href="#!/historial/{{ indicador.id }}" class="btn btn-link" style="padding-left: 0;">← Historial</a>
+    </div>
+    <div class="col-xs-8 text-center">
+      <h4 style="margin: 0;">{{ indicador.label }}</h4>
+    </div>
+    <div class="col-xs-2"></div>
+  </div>
+
+  <!-- Valor principal -->
+  <div class="text-center" style="margin-bottom: 30px;">
+    <h1 style="color: #007bff; font-size: 36px;">
+      <span>{{ indicador.valor }}</span>
+    </h1>
+  </div>
+
+  <!-- Detalles -->
+  <div class="row text-center" style="margin-bottom: 30px;">
+    <div class="col-xs-12 col-sm-4" style="margin-bottom: 15px;">
+      <strong>Nombre</strong><br>
+      {{ indicador.label }}
+    </div>
+    <div class="col-xs-12 col-sm-4" style="margin-bottom: 15px;">
+      <strong>Fecha</strong><br>
+      {{ indicador.fecha || 'Último valor' }}
+    </div>
+    <div class="col-xs-12 col-sm-4" style="margin-bottom: 15px;">
+      <strong>Unidad de Medida</strong><br>
+      {{ indicador.unidad }}
+    </div>
+  </div>
+
+  <!-- Gráfico -->
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <canvas id="graficoDetalle" height="100"></canvas>
+    </div>
+  </div>
+
+</div>
