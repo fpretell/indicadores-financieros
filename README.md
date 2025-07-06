@@ -93,7 +93,7 @@ En producción se recomienda:
 ## 🛠 Dependencias
 
 - AngularJS 1.7
-- Bootstrap 5
+- Bootstrap 3
 - Chart.js
 - Karma + Jasmine
 
@@ -101,4 +101,4 @@ En producción se recomienda:
 
 ## ✍ Autor
 
-Desarrollado como proyecto de prueba/demostración con buenas prácticas.
+Desarrollado como proyecto de prueba/demostración con buenas prácticas (fpretellmdz@gmail.com).
