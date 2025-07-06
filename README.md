@@ -8,7 +8,7 @@ Aplicación desarrollada con AngularJS 1.7 y Bootstrap, que consume la API públ
 
 1. Clonar el repositorio:
    ```bash
-   git clone <url-del-repo>
+   git clone https://github.com/fpretell/indicadores-financieros.git
    cd indicadores
    ```
 
@@ -17,12 +17,31 @@ Aplicación desarrollada con AngularJS 1.7 y Bootstrap, que consume la API públ
    npm install
    ```
 
-3. Ejecutar en modo desarrollo:
+3. Configurar la API Key del CMF Chile:
+
+   👉 Registrate y obtené tu API Key en: https://api.cmfchile.cl/documentacion/registrarse.html
+
+   Luego, editá el archivo:
+
+   ```bash
+   app/config/config.js
+   ```
+
+   Y reemplazá `"TU_API_KEY_AQUI"` por tu clave:
+
+   ```js
+   angular.module('IndicadoresApp')
+     .constant('config', {
+       apiKey: 'TU_API_KEY_AQUI'
+     });
+   ```
+
+4. Ejecutar en modo desarrollo:
    ```bash
    npm run dev
    ```
 
-4. Ejecutar tests unitarios:
+5. Ejecutar tests unitarios:
    ```bash
    npm test
    ```
