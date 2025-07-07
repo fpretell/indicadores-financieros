@@ -4,6 +4,20 @@ Aplicación desarrollada con AngularJS 1.7 y Bootstrap, que consume la API públ
 
 ---
 
+## ✅ Requisitos previos
+
+- **Node.js v20.x.x**  
+  Esta aplicación fue desarrollada y testeada con Node.js versión **20**.  
+  Se recomienda usar [nvm](https://github.com/nvm-sh/nvm) para gestionar versiones de Node:
+
+  ```bash
+  nvm install 20
+  nvm use 20
+  ```
+
+---
+
+
 ## 🚀 Instalación y ejecución
 
 1. Clonar el repositorio:

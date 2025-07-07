@@ -26,6 +26,7 @@ angular.module('IndicadoresApp')
     promesa
       .then(function(response) {
         const raw = Object.values(response.data)[0];
+        raw.sort((a, b) => new Date(b.Fecha) - new Date(a.Fecha)); // Orden descendente por fecha
         $scope.datos = raw.map(item => ({
           fecha: item.Fecha,
           valor: item.Valor

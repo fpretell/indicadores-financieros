@@ -56,15 +56,22 @@ angular.module('IndicadoresApp')
     promesa.then(response => {
       const raw = Object.values(response.data)[0];
 
-      let datos = raw;
+      // Ordenar por fecha ascendente
+      raw.sort((a, b) => new Date(a.Fecha) - new Date(b.Fecha));
+
+      // Tomar los últimos registros ya ordenados
+      let datos;
       if (['uf', 'dolar', 'euro'].includes(id)) {
-        datos = raw.slice(0, 10);
+        datos = raw.slice(-10); // Últimos 10 días
       } else if (['ipc', 'utm'].includes(id)) {
-        datos = raw.slice(0, 12);
+        datos = raw.slice(-12); // Últimos 12 meses
       }
 
-      const fechas = datos.map(d => d.Fecha).reverse();
-      const valores = datos.map(d => parseFloat(d.Valor.replace(',', '').replace('.', '').replace(',', '.'))).reverse();
+      const fechas = datos.map(d => d.Fecha);
+      const valores = datos.map(d =>
+        parseFloat(d.Valor.replace(/\./g, '').replace(',', '.'))
+      );
+
 
       setTimeout(() => {
         const ctx = document.getElementById('graficoDetalle');
